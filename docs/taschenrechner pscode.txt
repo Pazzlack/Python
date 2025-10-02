@@ -1,0 +1,42 @@
+START
+DEF Addition(z1, z2)
+	berechne ergebnis = z1 + z2
+	gib "Das Erbegnis ist: ergebnis" aus
+DEF Subtraktion (z1, z2)
+	berechne ergebnis = z1 - z2
+	gib "Das Ergebnis ist: ergebnis" aus
+DEF Multiplikation (z1, z2)
+	berechne ergebnis = z1 * z2
+	gib "Das ergebnis ist: ergebnis" aus
+DEF Division ()
+	wenn z2 = 0:
+	gib "Fehler: Division durch 0 nicht möglich" aus
+	End
+
+	sonst:
+	berechne ergebnis = z1 / z2
+	gib "Das ergebnis ist: ergebnis" aus
+
+main
+
+gib "Taschenrechner für 2 Zahlen" aus
+
+init ergebnis mit 0
+
+frage Benutzer nach der ersten Zahl → speichere in zahl_1
+frage Benutzer nach der zweiten Zahl → speichere in zahl_2
+frage Benutzer nach der gewünschten Operation (+, -, *, /) → speichere in operation
+
+wenn operation ist "+":
+    rufe Addition mit zahl_1 und zahl_2 auf
+sonst wenn operation ist "-":
+    rufe Subtraktion mit zahl_1 und zahl_2 auf
+sonst wenn operation ist "*":
+    rufe Multiplikation mit zahl_1 und zahl_2 auf
+sonst wenn operation ist "/":
+    rufe Division mit zahl_1 und zahl_2 auf
+sonst:
+    gib "Falsche Eingabe, bitte nur +, -, *, / eingeben" aus
+
+
+
