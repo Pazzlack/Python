@@ -3,6 +3,9 @@ this function take integer age as Argument and
 print if he/she/they/Them is old or will be old
 """
 def ageMachine(age: int)->None:
+        
+        #input function return is always a string
+        #input function is someting like async in javascript
         age = int(input("Wie alt bist du?"))
        
         if age > 50:
