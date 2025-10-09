@@ -2,7 +2,7 @@
 
 
 ALPHABET = [
-   ' ' 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+   ' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
     'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
 ]
 
@@ -21,18 +21,27 @@ def encrypt()->str:
     #klar_text is what user typed for example jojo
     klar_text = input ("Enter your text to encrypt: ")
     key = getKey()
-    for charecter in klar_text:
+    for character in klar_text:
         #we find position of char in alphabet
-        #when character == j ==> aplhabet_index = 9
-        alphabet_index = ALPHABET.index(charecter)
+        #when character == j ==> aplhabet_index = 10
+        alphabet_index = ALPHABET.index(character)
         encryptedChar_index = (alphabet_index+key) % ALPHABET_LEN
+        # += means result = result + ...
         result += ALPHABET[encryptedChar_index]
     return result
 
 def decode()->str:
+    result = ""
     cypher_text = input("\n please enter Text to be DECRYPTED: ")
-    key = input("Please enter DECRYPTION key: ")
-    return "it is decrypted from " + cypher_text + " with key " + key
+    key = getKey()
+    for character in cypher_text:
+        #we find position of char in alphabet
+        #when character == j ==> aplhabet_index = 10
+        alphabet_index = ALPHABET.index(character)
+        encryptedChar_index = (alphabet_index-key) % ALPHABET_LEN
+        # += means result = result + ...
+        result += ALPHABET[encryptedChar_index]
+    return result
 
 
 
@@ -48,6 +57,7 @@ def main():
         result = decode()
     else:
         result = "you must enter only e or d"
+        main()
         
     print(result)
 
