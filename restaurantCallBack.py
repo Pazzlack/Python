@@ -23,7 +23,7 @@ def checkFoodExistence(food_name:str)->bool:
 
 def orderFood(food_name:str, checkFoodExistence):
     is_food_exist = checkFoodExistence(food_name)
-    if is_food_exist:
+    if is_food_exist == True:
         print(f"your {food_name} is delivering soon!")
     else:
         print(f"Sorry, we don't have {food_name} in our menu!")

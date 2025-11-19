@@ -57,7 +57,6 @@ def main():
         result = decode()
     else:
         result = "you must enter only e or d"
-        main()
         
     print(result)
 
